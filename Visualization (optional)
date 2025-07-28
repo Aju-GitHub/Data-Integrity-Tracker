@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+
+# Count mismatches and unique records
+counts = {
+    'Mismatches': mismatched.shape[0],
+    'Only in Master': only_in_master.shape[0],
+    'Only in New': only_in_new.shape[0]
+}
+
+# Plot
+plt.figure(figsize=(7, 4))
+plt.bar(counts.keys(), counts.values(), color=['orange', 'green', 'red'])
+plt.title('Discrepancy Summary')
+plt.ylabel('Number of Records')
+plt.grid(axis='y', linestyle='--', alpha=0.6)
+plt.tight_layout()
+plt.savefig('chart.png')
+plt.show()
