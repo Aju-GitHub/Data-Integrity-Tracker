@@ -1,0 +1,12 @@
+# Export in one excel file
+
+with pd.ExcelWriter('discrepancy_report.xlsx') as writer:
+
+    mismatched.to_excel(writer, sheet_name='Mismatches', index=False)
+
+    only_in_master.to_excel(writer, sheet_name='Only in Master', index=False)
+
+    only_in_new.to_excel(writer, sheet_name='Only in New', index=False)
+  
+from google.colab import files
+files.download('discrepancy_report.xlsx')
