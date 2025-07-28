@@ -1,0 +1,26 @@
+# Beginning - Loading the data (A synthetic data that simulates real-world KYC)
+
+import pandas as pd # Library
+
+# Creating master data
+
+master_data = pd.DataFrame({
+    'ClientID' : [101, 102, 103, 104, 105],
+    'Name' : ['Alice Johnson', 'Bob Smith', 'Charlie Lee', 'Daisy Paul', 'Carol Davis'],
+    'Email' : ['alice@abc.com', 'bob@abc.com', 'charlie@abc.com', 'daisy@abc.com', 'carol@abc.com'],
+    'Phone' : ['+911111111111', '+91111111111112', '+91111111111113', '+91111111111114', '+91111111111115']
+})
+
+#Create new data (simulation entry mistakes)
+
+new_data = pd.DataFrame({
+    'ClientID' : [101, 102, 104, 105, 106],
+    'Name' : ['Alice Johnson', 'Bob S.', 'Daisy Paul', 'Evan Singh', "Jovice Mariam"],
+    'Email' : ['alice@abc.com', 'bobsmith@abc.com', 'daisy@abc.com', 'evan@abc.com', 'Jovice@abc.com'],
+    'Phone' : ['+911111111111', '+91111111119999', '+91111111111114', '+91111111111115', '+91111111111116']
+})
+
+#save as CSV
+
+master_data.to_csv('master_data.csv', index=False)
+new_data.to_csv('new_data.csv', index=False)
