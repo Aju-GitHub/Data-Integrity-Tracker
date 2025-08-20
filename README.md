@@ -1,4 +1,4 @@
-# Data-Integrity-Tracker
+# Data_Integrity_Tracker
 
 A lightweight data discrepancy tracker built in Python using Google Colab. It compares two datasets (e.g., client records) and generates an audit-friendly report of mismatches and missing entries.
 
